@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listaTareas">
+
+    <fragment
+        android:id="@+id/listaTareas"
+        android:name="com.example.todolistreal.FragmentList"
+        android:label="fragment_lista_tareas"
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_listaTareas_to_fragmentCrear"
+            app:destination="@id/fragmentCrear" />
+        <action
+            android:id="@+id/action_listaTareas_to_fragmentEditar"
+            app:destination="@id/fragmentEditar" />
+    </fragment>
+    <fragment
+        android:id="@+id/busquedaTareas"
+        android:name="com.example.todolistreal.BusquedaTareas"
+        android:label="fragment_busqueda_tareas"
+        tools:layout="@layout/fragment_busqueda_tareas" />
+    <fragment
+        android:id="@+id/fragmentCrear"
+        android:name="com.example.todolistreal.FragmentCrear"
+        android:label="fragment_crear"
+        tools:layout="@layout/fragment_crear" >
+        <action
+            android:id="@+id/action_fragmentCrear_to_listaTareas"
+            app:destination="@id/listaTareas" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentEditar"
+        android:name="com.example.todolistreal.FragmentEditar"
+        android:label="fragment_editar"
+        tools:layout="@layout/fragment_editar" >
+        <action
+            android:id="@+id/action_fragmentEditar_to_listaTareas"
+            app:destination="@id/listaTareas" />
+    </fragment>
+</navigation>
