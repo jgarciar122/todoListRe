@@ -1,7 +1,6 @@
 package com.example.todolistreal;
 
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -9,13 +8,10 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.example.todolistreal.databinding.FragmentListBinding;
-
 
 public class FragmentList extends Fragment {
 
@@ -28,7 +24,6 @@ public class FragmentList extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -47,7 +42,7 @@ public class FragmentList extends Fragment {
         tareasViewModel = new ViewModelProvider(requireActivity()).get(TareasViewModel.class);
 
         tareasViewModel.getListaTareasLiveData().observe(getViewLifecycleOwner(), lista -> {
-            ListaTareasAdapter adapter = new ListaTareasAdapter(lista);
+            ListaTareasAdapter adapter = new ListaTareasAdapter(lista, this);  // Pasar el fragmento
             binding.RecyclerListaTareas.setAdapter(adapter);
         });
 
@@ -68,7 +63,4 @@ public class FragmentList extends Fragment {
             }
         }).attachToRecyclerView(binding.RecyclerListaTareas);
     }
-
-
-
 }

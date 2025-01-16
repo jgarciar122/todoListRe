@@ -4,7 +4,10 @@ import androidx.annotation.Nullable;
 
 import java.util.Objects;
 
-public class Tarea {
+import java.io.Serializable;
+
+public class Tarea implements Serializable {
+
 
     String nombre;
     String descripcion;

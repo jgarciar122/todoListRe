@@ -10,18 +10,18 @@ public class ListaTareas {
 
     public ListaTareas() {
         listaTareas = new ArrayList<>();
-        listaTareas.add(new Tarea("Comprar leche", "Ir al supermercado y comprar leche", ""));
-        listaTareas.add(new Tarea("Sacar la basura", "Sacar la basura al contenedor", ""));
-        listaTareas.add(new Tarea("Estudiar para el examen", "Repasar los apuntes y hacer ejercicios", ""));
-        listaTareas.add(new Tarea("Comprar leche", "Ir al supermercado y comprar leche", ""));
-        listaTareas.add(new Tarea("Sacar la basura", "Sacar la basura al contenedor", ""));
-        listaTareas.add(new Tarea("Estudiar para el examen", "Repasar los apuntes y hacer ejercicios", ""));
-        listaTareas.add(new Tarea("Comprar leche", "Ir al supermercado y comprar leche", ""));
-        listaTareas.add(new Tarea("Sacar la basura", "Sacar la basura al contenedor", ""));
-        listaTareas.add(new Tarea("Estudiar para el examen", "Repasar los apuntes y hacer ejercicios", ""));
-        listaTareas.add(new Tarea("Comprar leche", "Ir al supermercado y comprar leche", ""));
-        listaTareas.add(new Tarea("Sacar la basura", "Sacar la basura al contenedor", ""));
-        listaTareas.add(new Tarea("Estudiar para el examen", "Repasar los apuntes y hacer ejercicios", ""));
+        listaTareas.add(new Tarea("Comprar leche", "Ir al supermercado y comprar leche", "1"));
+        listaTareas.add(new Tarea("Sacar la basura", "Sacar la basura al contenedor", "2"));
+        listaTareas.add(new Tarea("Estudiar para el examen", "Repasar los apuntes y hacer ejercicios", "3"));
+        listaTareas.add(new Tarea("Comprar leche", "Ir al supermercado y comprar leche", "1"));
+        listaTareas.add(new Tarea("Sacar la basura", "Sacar la basura al contenedor", "2"));
+        listaTareas.add(new Tarea("Estudiar para el examen", "Repasar los apuntes y hacer ejercicios", "3"));
+        listaTareas.add(new Tarea("Comprar leche", "Ir al supermercado y comprar leche", "2"));
+        listaTareas.add(new Tarea("Sacar la basura", "Sacar la basura al contenedor", "2"));
+        listaTareas.add(new Tarea("Estudiar para el examen", "Repasar los apuntes y hacer ejercicios", "1"));
+        listaTareas.add(new Tarea("Comprar leche", "Ir al supermercado y comprar leche", "3"));
+        listaTareas.add(new Tarea("Sacar la basura", "Sacar la basura al contenedor", "3"));
+        listaTareas.add(new Tarea("Estudiar para el examen", "Repasar los apuntes y hacer ejercicios", "1"));
     }
 
     public List<Tarea> getListaTareas() {
@@ -32,10 +32,6 @@ public class ListaTareas {
         this.listaTareas = listaTareas;
     }
 
-    public boolean agregarTarea(Tarea t) {
-        if (listaTareas.contains(t)) return false;
-        return listaTareas.add(t);
-    }
 
     public Tarea getTarea(String nombre) {
         Tarea tarea = null;
@@ -56,6 +52,7 @@ public class ListaTareas {
         }
         return false;
     }
+
     public void addTarea(Tarea tarea) {
         listaTareas.add(tarea);
     }
@@ -63,7 +60,7 @@ public class ListaTareas {
     public void editarTarea(Tarea tareaEditada) {
         for (int i = 0; i < listaTareas.size(); i++) {
             if (listaTareas.get(i).getNombre().equals(tareaEditada.getNombre())) {
-                listaTareas.set(i, tareaEditada); // Reemplaza la tarea en la lista
+                listaTareas.set(i, tareaEditada);
                 break;
             }
         }
